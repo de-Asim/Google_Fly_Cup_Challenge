@@ -6,9 +6,9 @@ for file in `gsutil ls gs://spls/gsp394/tables/*.csv`; do TABLE_NAME=`echo $file
 
  
 
-Task 2:
+Task 2:  (Make changes as described in the video)
 
-SELECT name FROM `drl.events` WHERE city = 'Phoenix' (Make changes as described in the video)
+SELECT name FROM `drl.events` WHERE city = '**CHANGE**'
 
  
 
@@ -18,9 +18,9 @@ SELECT `drl.pilots`.name, `drl.event_pilots`.id FROM `drl.event_pilots` LEFT JOI
 
  
 
-Task 4:
+Task 4: (Make changes as described in the video)
 
-SELECT `drl.pilots`.name, `drl.events`.name AS event_name FROM `drl.event_pilots` LEFT OUTER JOIN `drl.pilots` ON `drl.pilots`.id = `drl.event_pilots`.pilot_id LEFT OUTER JOIN `drl.events` ON `drl.events`.id = `drl.event_pilots`.event_id WHERE `drl.events`.name = 'California Nights' (Make changes as described in the video)
+SELECT `drl.pilots`.name, `drl.events`.name AS event_name FROM `drl.event_pilots` LEFT OUTER JOIN `drl.pilots` ON `drl.pilots`.id = `drl.event_pilots`.pilot_id LEFT OUTER JOIN `drl.events` ON `drl.events`.id = `drl.event_pilots`.event_id WHERE `drl.events`.name = '**CHANGE**'
 
  
 
@@ -87,7 +87,7 @@ FROM `drl.time_trial_group_pilot_times` LEFT OUTER JOIN `drl.time_trial_group_pi
 
  
 
-Task 7 :
+Task 7 :  (Make changes as described in the video)
 
 WITH cte AS
 
@@ -106,12 +106,12 @@ FROM `drl.time_trial_cleaned`
 LEFT OUTER JOIN `drl.rounds` ON `drl.time_trial_cleaned`.round_id = `drl.rounds`.id
 
 LEFT OUTER JOIN `drl.events` ON `drl.events`.id = `drl.rounds`.event_id)
-SELECT MIN(time) as fastest_time FROM cte WHERE event_name = 'California Nights' (Make changes as described in the video) AND name = 'Time Trials'
+SELECT MIN(time) as fastest_time FROM cte WHERE event_name = '**CHANGE**' AND name = 'Time Trials'
 
 
 
 
-Task 8:
+Task 8: 2 (Make changes as described in the video)
 
 SELECT
 
@@ -135,17 +135,16 @@ name = 'NURK'
 
 AND
 
-minimum_time != 'NURK'
+minimum_time != '**CHANGE**'
 
 AND
 
-minimum_time != ''
-
- (Make changes as described in the video)
+minimum_time != '**CHANGE**'
 
 
 
-Task 9 :
+
+Task 9 : (Make changes as described in the video)
 
 WITH cte AS
 
@@ -156,7 +155,7 @@ FROM `drl.heat_standings`
 LEFT JOIN `drl.event_pilots` ON `drl.event_pilots`.id = event_pilot_id
 
 LEFT JOIN `drl.pilots` ON `drl.pilots`.id = `drl.event_pilots`.pilot_id
-WHERE name = 'NURK' (Make changes as described in the video) AND minimum_time != 'DNF' AND minimum_time != '')
+WHERE name = '**CHANGE**' AND minimum_time != 'DNF' AND minimum_time != '')
 
 SELECT
 
@@ -197,7 +196,7 @@ FROM cte
 
 
 
-Task 10:
+Task 10: (Make changes as described in the video)
 
  
 
@@ -218,7 +217,7 @@ FROM `drl.heat_standings`
 LEFT JOIN `drl.event_pilots` ON `drl.event_pilots`.id = event_pilot_id
 
 LEFT JOIN `drl.pilots` ON `drl.pilots`.id = `drl.event_pilots`.pilot_id
-WHERE name = 'NURK' (Make changes as described in the video) AND minimum_time != 'DNF' AND minimum_time != ''),
+WHERE name = '**CHANGE**' AND minimum_time != 'DNF' AND minimum_time != ''),
 
 cte2 AS
 
